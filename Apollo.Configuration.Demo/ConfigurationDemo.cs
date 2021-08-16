@@ -1,9 +1,12 @@
 ﻿using Com.Ctrip.Framework.Apollo;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+
 using Newtonsoft.Json;
+
 using System;
 
 namespace Apollo.Configuration.Demo
@@ -12,25 +15,38 @@ namespace Apollo.Configuration.Demo
     {
         private const string DefaultValue = "undefined";
         private readonly IConfiguration _config;
-        private readonly IConfiguration _anotherConfig;
+        //private readonly IConfiguration _anotherConfig;
 
         public ConfigurationDemo()
         {
             var host = Host.CreateDefaultBuilder()
-                  .AddApollo()
-                  .ConfigureServices((context, services) =>
-                  {
-                      services.AddOptions()
-                          .Configure<Value>(context.Configuration)
-                          .Configure<Value>("other", context.Configuration.GetSection("a"));
-#pragma warning disable 618
-                      services.AddSingleton<ApolloConfigurationManager>();
-#pragma warning restore 618
-                  })
+                   //.AddApollo()
+
+                   //                  .ConfigureServices((context, services) =>
+                   //                  {
+                   //                      services.AddOptions()
+                   //                          .Configure<Value>(context.Configuration)
+                   //                          .Configure<Value>("other", context.Configuration.GetSection("a"));
+                   //#pragma warning disable 618
+                   //                      services.AddSingleton<ApolloConfigurationManager>();
+                   //#pragma warning restore 618
+                   //                  })
+                   .ConfigureAppConfiguration((hostingContext, builder) =>
+                   {
+                       builder
+                      .AddApollo(builder.Build().GetSection("apollo"))
+                      .AddDefault()
+                       .AddNamespace("UUPT-Service.DbConnectConfig"); //Apollo中NameSpace的名称
+                                             //.AddNamespace("ab2");//Apollo中NameSpace的名称
+                   })
+                   //.ConfigureWebHostDefaults(webBuilder =>
+                   //{
+                   //    webBuilder.UseStartup<Startup>();
+                   //})
                   .Build();
 
             _config = host.Services.GetRequiredService<IConfiguration>();
-            _anotherConfig = _config.GetSection("a");
+            //_anotherConfig = _config.GetSection("a");
 
             var optionsMonitor = host.Services.GetService<IOptionsMonitor<Value>>();
 
@@ -42,10 +58,10 @@ namespace Apollo.Configuration.Demo
         public string GetConfig(string key)
         {
             var result = _config.GetValue(key, DefaultValue);
-            if (result.Equals(DefaultValue))
-            {
-                result = _anotherConfig.GetValue(key, DefaultValue);
-            }
+            //if (result.Equals(DefaultValue))
+            //{
+            //    result = _anotherConfig.GetValue(key, DefaultValue);
+            //}
             var color = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Loading key: {0} with value: {1}", key, result);

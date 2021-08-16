@@ -10,7 +10,7 @@ namespace Apollo.Configuration.Demo
         {
             LogManager.UseConsoleLogging(LogLevel.Trace);
 
-            YamlConfigAdapter.Register();
+            //YamlConfigAdapter.Register();
 
             var demo = new ConfigurationDemo();
 

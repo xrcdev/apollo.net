@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Apollo.Configuration": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -13,4 +13,10 @@
     <ProjectReference Include="..\Apollo.ExtensionsHosting\Apollo.ExtensionsHosting.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

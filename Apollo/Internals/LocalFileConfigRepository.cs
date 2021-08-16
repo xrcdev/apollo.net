@@ -16,6 +16,9 @@ namespace Com.Ctrip.Framework.Apollo.Internals
         private const string ConfigDir = "config-cache";
 
         private string? _baseDir;
+        /// <summary>
+        /// 保存上一个配置
+        /// </summary>
         private volatile Properties? _fileProperties;
 
         private readonly IApolloOptions _options;

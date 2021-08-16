@@ -20,7 +20,9 @@ namespace Microsoft.Extensions.Hosting
         public static IHostBuilder AddApollo(this IHostBuilder hostBuilder, bool fromAppConfiguration = true, string key = "apollo") =>
             fromAppConfiguration
                 ? hostBuilder.ConfigureAppConfiguration((_, builder) => builder.AddApollo(builder.Build().GetSection(key)))
-                : hostBuilder.ConfigureAppConfiguration((context, builder) => builder.AddApollo(context.Configuration.GetSection(key)));
+                : hostBuilder.ConfigureAppConfiguration((context, builder) => builder.AddApollo(
+                    context.Configuration.GetSection(key)
+                    ));
 
         public static IHostBuilder AddApollo(this IHostBuilder hostBuilder, string appId, string metaServer)
         {

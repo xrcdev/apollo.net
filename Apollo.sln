@@ -45,9 +45,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apollo.OpenApi.DependencyIn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apollo.OpenApi.Tests", "Apollo.OpenApi.Tests\Apollo.OpenApi.Tests.csproj", "{62AB1893-C173-41C7-9884-46A199244B13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apollo.ExtensionsHosting", "Apollo.ExtensionsHosting\Apollo.ExtensionsHosting.csproj", "{65DED7CA-9B84-45AE-84D4-13400A3842D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apollo.ExtensionsHosting", "Apollo.ExtensionsHosting\Apollo.ExtensionsHosting.csproj", "{65DED7CA-9B84-45AE-84D4-13400A3842D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apollo.AspNetCoreHosting", "Apollo.AspNetCoreHosting\Apollo.AspNetCoreHosting.csproj", "{78AB89DD-1D81-4619-8750-2DABDA071FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apollo.AspNetCoreHosting", "Apollo.AspNetCoreHosting\Apollo.AspNetCoreHosting.csproj", "{78AB89DD-1D81-4619-8750-2DABDA071FD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication6", "WebApplication6\WebApplication6.csproj", "{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -261,6 +263,18 @@ Global
 		{78AB89DD-1D81-4619-8750-2DABDA071FD4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{78AB89DD-1D81-4619-8750-2DABDA071FD4}.Release|x86.ActiveCfg = Release|Any CPU
 		{78AB89DD-1D81-4619-8750-2DABDA071FD4}.Release|x86.Build.0 = Release|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -283,6 +297,7 @@ Global
 		{62AB1893-C173-41C7-9884-46A199244B13} = {24717111-7EE5-4F52-B1BA-328167E51C91}
 		{65DED7CA-9B84-45AE-84D4-13400A3842D7} = {C9CB5265-6B89-42F1-BA20-2F85427359E7}
 		{78AB89DD-1D81-4619-8750-2DABDA071FD4} = {C9CB5265-6B89-42F1-BA20-2F85427359E7}
+		{EC63FFB6-785D-44C8-A3FF-E8CB25B2E1BE} = {12417079-E62C-4F29-ADDE-5EABD77331E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F567DF02-5944-4752-8996-BF7B12DC4DF3}

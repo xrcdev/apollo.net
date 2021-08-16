@@ -4,6 +4,7 @@ using Com.Ctrip.Framework.Apollo.Exceptions;
 using Com.Ctrip.Framework.Apollo.Logging;
 using Com.Ctrip.Framework.Apollo.Util;
 using Com.Ctrip.Framework.Apollo.Util.Http;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -139,7 +140,7 @@ namespace Com.Ctrip.Framework.Apollo.Internals
 
                 var uriBuilder = new UriBuilder(uri + "services/config");
 
-                var query = new Dictionary<string, string> {["appId"] = _options.AppId};
+                var query = new Dictionary<string, string> { ["appId"] = _options.AppId };
 
                 if (!string.IsNullOrEmpty(_options.LocalIp)) query["ip"] = _options.LocalIp;
 
