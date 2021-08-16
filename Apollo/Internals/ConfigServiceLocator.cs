@@ -21,6 +21,9 @@ namespace Com.Ctrip.Framework.Apollo.Internals
         private readonly HttpUtil _httpUtil;
 
         private readonly IApolloOptions _options;
+        /// <summary>
+        /// 服务地址信息
+        /// </summary>
         private volatile IList<ServiceDto> _configServices = new List<ServiceDto>();
         private Task? _updateConfigServicesTask;
         private readonly Timer? _timer;
@@ -109,6 +112,13 @@ namespace Com.Ctrip.Framework.Apollo.Internals
                     var services = response.Body;
                     if (services == null || services.Count == 0) continue;
 
+                    foreach (var service in services)
+                    {
+                        if (service.HomepageUrl.Contains("172.18.0.3"))
+                        {
+                            service.HomepageUrl = service.HomepageUrl.Replace("172.18.0.3", "localhost");
+                        }
+                    }
                     _configServices = services;
 
                     return;

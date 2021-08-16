@@ -28,6 +28,9 @@ namespace Com.Ctrip.Framework.Apollo.Internals
         private CancellationTokenSource? _cts;
         private readonly ISchedulePolicy _longPollFailSchedulePolicyInSecond;
         private readonly ISchedulePolicy _longPollSuccessSchedulePolicyInMs;
+        /// <summary>
+        /// 长连接,一个namespace对应一个
+        /// </summary>
         private readonly ConcurrentDictionary<string, ISet<RemoteConfigRepository>> _longPollNamespaces;
         private readonly ConcurrentDictionary<string, long?> _notifications;
         private readonly ConcurrentDictionary<string, ApolloNotificationMessages> _remoteNotificationMessages; //namespaceName -> watchedKey -> notificationId

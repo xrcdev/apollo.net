@@ -13,6 +13,11 @@ namespace Com.Ctrip.Framework.Apollo.Internals
         private readonly RemoteConfigLongPollService _remoteConfigLongPollService;
         private readonly ConfigServiceLocator _serviceLocator;
 
+        /// <summary>
+        /// 初始化ConfigServiceLocator , RemoteConfigLongPollService
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="httpUtil"></param>
         public ConfigRepositoryFactory(IApolloOptions options, HttpUtil? httpUtil = null)
         {
             _options = options;
