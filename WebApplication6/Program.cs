@@ -29,11 +29,11 @@ namespace WebApplication6
 
              .ConfigureAppConfiguration((hostingContext, builder) =>
              {
-                 builder
+                 bool IsUnix = Environment.CurrentDirectory[0] == '/';
+                 builder.AddXmlFile(IsUnix ? "/CommonConfig/CommonConfig.xml" : "C:\\CommonConfig\\CommonConfig.xml")
+                 .AddXmlFile(IsUnix ? "/CommonConfig/HtCommonConfig_Core.xml" : "C:\\CommonConfig\\HtCommonConfig_Core.xml")
                  .AddApollo(builder.Build().GetSection("apollo"))
                  .AddDefault();
-                 //.AddNamespace("UUPT-Service.DbConnectConfig"); //Apollo中NameSpace的名称
-
              })
                 //.ConfigureAppConfiguration((hostBuilderContext, configurationBuilder) =>
                 //{
